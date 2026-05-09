@@ -1,0 +1,154 @@
+{
+  "menu_items": [
+    {
+      "id": 1,
+      "title": "Dashboard",
+      "slug": "dashboard",
+      "url": "/dashboard",
+      "icon": "fa fa-home",
+      "position": 1,
+      "publish": true,
+      "parent": null,
+      "children": []
+    },
+    {
+      "id": 2,
+      "title": "Content Management",
+      "slug": "content-management",
+      "url": "#",
+      "icon": "fa fa-file-text",
+      "position": 2,
+      "publish": true,
+      "parent": null,
+      "children": [
+        {
+          "id": 3,
+          "title": "Articles",
+          "slug": "articles",
+          "url": "/articles",
+          "icon": "fa fa-newspaper-o",
+          "position": 1,
+          "publish": true,
+          "parent": 2,
+          "children": []
+        },
+        {
+          "id": 4,
+          "title": "Categories",
+          "slug": "categories",
+          "url": "/categories",
+          "icon": "fa fa-folder",
+          "position": 2,
+          "publish": true,
+          "parent": 2,
+          "children": []
+        },
+        {
+          "id": 5,
+          "title": "Media Library",
+          "slug": "media-library",
+          "url": "/media",
+          "icon": "fa fa-image",
+          "position": 3,
+          "publish": true,
+          "parent": 2,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "User Management",
+      "slug": "user-management",
+      "url": "#",
+      "icon": "fa fa-users",
+      "position": 3,
+      "publish": true,
+      "parent": null,
+      "children": [
+        {
+          "id": 7,
+          "title": "Users",
+          "slug": "users",
+          "url": "/users",
+          "icon": "fa fa-user",
+          "position": 1,
+          "publish": true,
+          "parent": 6,
+          "children": []
+        },
+        {
+          "id": 8,
+          "title": "Roles & Permissions",
+          "slug": "roles-permissions",
+          "url": "/roles",
+          "icon": "fa fa-shield",
+          "position": 2,
+          "publish": true,
+          "parent": 6,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Settings",
+      "slug": "settings",
+      "url": "/settings",
+      "icon": "fa fa-cog",
+      "position": 4,
+      "publish": true,
+      "parent": null,
+      "children": []
+    }
+  ],
+
+  "create_menu_request": {
+    "title": "New Menu Item",
+    "url": "/new-page",
+    "icon": "fa fa-plus",
+    "position": 5,
+    "publish": true,
+    "parent": null
+  },
+
+  "update_menu_request": {
+    "title": "Updated Menu Item",
+    "url": "/updated-page",
+    "icon": "fa fa-edit",
+    "position": 3,
+    "publish": true,
+    "parent": 2
+  },
+
+  "menu_response": {
+    "menus": [
+      {
+        "id": 1,
+        "title": "Dashboard",
+        "slug": "dashboard",
+        "url": "/dashboard",
+        "icon": "fa fa-home",
+        "position": 1,
+        "publish": true,
+        "created_at": "2024-01-01T00:00:00Z",
+        "parent": null,
+        "parent_title": null,
+        "children": []
+      }
+    ],
+    "total": 1
+  },
+
+  "filter_parameters": {
+    "parent_id": "2",
+    "parent_title": "Content",
+    "title": ["1", "2", "3"],
+    "slug": "dashboard",
+    "url": "/dashboard",
+    "position": "1",
+    "sort_column": "position",
+    "sort_order": "asc"
+  }
+}
+
