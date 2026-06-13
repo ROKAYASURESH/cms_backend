@@ -3,31 +3,29 @@ set -e
 
 echo "Deployment started ..."
 
-# Pull the latest version of the app
-git pull origin main
+cd /home/suresh/project/cms_backend
+
+# Pull latest code
+git fetch origin
+git reset --hard origin/main
 echo "New changes copied to server !"
 
-# Activate Virtual Env
+# Install system dependencies for psycopg2
+sudo apt-get install -y libpq-dev python3-dev
+
+# Activate virtual environment
 source my_env/bin/activate
 echo "Virtual env 'my_env' Activated !"
 
+# Install Python dependencies
 echo "Installing Dependencies..."
-pip install -r requirements.txt --no-input
+pip install -r requirements.txt
 
-echo "Serving Static Files..."
+# Django commands
+python manage.py migrate
 python manage.py collectstatic --noinput
 
-echo "Running Database migration"
-python manage.py makemigrations
-python manage.py migrate
+# Restart service
+sudo systemctl restart gunicorn
 
-# Deactivate Virtual Env
-deactivate
-echo "Virtual env 'mb' Deactivated !"
-
-# Reloading Application So New Changes could reflect on website
-pushd core
-touch wsgi.py
-popd
-
-echo "Deployment Finished!"
+echo "Deployment complete!"
