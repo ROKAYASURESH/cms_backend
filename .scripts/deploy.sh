@@ -26,6 +26,6 @@ python manage.py migrate
 python manage.py collectstatic --noinput
 
 # Restart service
-sudo systemctl restart gunicorn
+sudo systemctl restart cms.service
 
 echo "Deployment complete!"
